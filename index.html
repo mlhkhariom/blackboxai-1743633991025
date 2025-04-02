@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Stream</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white font-inter">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <i class="fas fa-film text-2xl text-blue-500 mr-2"></i>
+                        <span class="text-xl font-bold">MovieStream</span>
+                    </a>
+                </div>
+                <div class="flex-1 flex justify-center px-4">
+                    <div class="max-w-lg w-full">
+                        <div class="relative">
+                            <input type="text" id="search-input" 
+                                   class="w-full bg-gray-700 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   placeholder="Search movies, TV shows...">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center">
+                                <i class="fas fa-search text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">Movies</a>
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">TV Shows</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Featured Content -->
+            <section id="featured" class="mb-12">
+                <div class="relative rounded-lg overflow-hidden h-96">
+                    <div id="featured-content" class="absolute inset-0 bg-center bg-cover">
+                        <!-- Featured content will be loaded here -->
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h2 id="featured-title" class="text-4xl font-bold mb-4"></h2>
+                        <p id="featured-description" class="text-lg text-gray-300 mb-4 line-clamp-2"></p>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
+                            <i class="fas fa-play mr-2"></i>Watch Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Sections -->
+            <div id="content-sections">
+                <!-- Content sections will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Search Results Modal -->
+    <div id="search-modal" class="fixed inset-0 bg-gray-900/95 z-50 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold">Search Results</h2>
+                <button id="close-search" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="search-results" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Search results will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="player-modal" class="fixed inset-0 bg-black z-50 hidden">
+        <div class="absolute top-4 right-4">
+            <button id="close-player" class="text-gray-400 hover:text-white">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div id="player-container" class="w-full h-full flex items-center justify-center">
+            <!-- Video player will be loaded here -->
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
